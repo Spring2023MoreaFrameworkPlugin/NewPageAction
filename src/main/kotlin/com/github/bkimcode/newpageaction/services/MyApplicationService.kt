@@ -1,6 +1,6 @@
-package org.jetbrains.plugins.template.services
+package com.github.bkimcode.newpageaction.services
 
-import org.jetbrains.plugins.template.MyBundle
+import com.github.bkimcode.newpageaction.MyBundle
 
 class MyApplicationService {
 
