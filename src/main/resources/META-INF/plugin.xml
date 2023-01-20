@@ -1,15 +1,25 @@
 <!-- Plugin Configuration File. Read more: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html -->
 <idea-plugin>
-    <id>com.github.bkimcode.newpageaction</id>
-    <name>IntelliJ Platform Plugin NewPageAction</name>
-    <vendor>bkimcode</vendor>
+    <id>com.github.Spring2023MoreaFrameworkPlugin.newpageaction</id>
+    <name>NewPageAction</name>
+    <vendor>Spring2023MoreaFrameworkPlugin/</vendor>
 
     <depends>com.intellij.modules.platform</depends>
+    <depends>com.intellij.modules.java-capable</depends>
 
     <extensions defaultExtensionNs="com.intellij">
         <applicationService serviceImplementation="com.github.bkimcode.newpageaction.services.MyApplicationService"/>
         <projectService serviceImplementation="com.github.bkimcode.newpageaction.services.MyProjectService"/>
     </extensions>
+  <actions>
+    <group id="MyPlugin.MyGroup" text="My Group" description="A group of actions provided by My Plugin">
+      <add-to-group group-id="FileMenu" anchor="first"/>
+      <action id="MyPlugin.CreateNewPage"
+              class="com.github.bkimcode.newpageaction.actions.CreateNewPage"
+              text="Create New Page"
+              description="Create a new file"/>
+    </group>
+  </actions>
 
     <applicationListeners>
         <listener class="com.github.bkimcode.newpageaction.listeners.MyProjectManagerListener"
