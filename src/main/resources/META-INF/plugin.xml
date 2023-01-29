@@ -1,8 +1,10 @@
 <!-- Plugin Configuration File. Read more: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html -->
 <idea-plugin>
-    <id>com.github.Spring2023MoreaFrameworkPlugin.newpageaction</id>
+
+    <id>com.github.bkimcode.newpageaction</id>
     <name>NewPageAction</name>
-    <vendor>Spring2023MoreaFrameworkPlugin/</vendor>
+    <vendor>bkimcode</vendor>
+
 
     <depends>com.intellij.modules.platform</depends>
     <depends>com.intellij.modules.java-capable</depends>
@@ -20,6 +22,15 @@
               description="Create a new file"/>
     </group>
   </actions>
+
+
+  <actions>
+    <action id="MyActionId" class="com.newpageaction.MyAction" text="Create New Morea Module" description="Create a new Morea Module with a specified name">
+      <add-to-group group-id="ProjectViewPopupMenu" anchor="last"/>
+    </action>
+  </actions>
+
+
 
     <applicationListeners>
         <listener class="com.github.bkimcode.newpageaction.listeners.MyProjectManagerListener"
