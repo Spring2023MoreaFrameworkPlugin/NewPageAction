@@ -13,19 +13,17 @@
         <applicationService serviceImplementation="com.github.bkimcode.newpageaction.services.MyApplicationService"/>
         <projectService serviceImplementation="com.github.bkimcode.newpageaction.services.MyProjectService"/>
     </extensions>
+
+
+
   <actions>
-    <group id="MyPlugin.MyGroup" text="My Group" description="A group of actions provided by My Plugin">
-      <add-to-group group-id="FileMenu" anchor="first"/>
-      <action id="MyPlugin.CreateNewPage"
-              class="com.github.bkimcode.newpageaction.actions.CreateNewPage"
-              text="Create New Page"
-              description="Create a new file"/>
-    </group>
+    <action id="MyActionId" class="com.newpageaction.MyAction" text="Create a New Morea Page " description="Create a new Morea Page with a specified name">
+      <add-to-group group-id="ProjectViewPopupMenu" anchor="first"/>
+    </action>
   </actions>
 
-
   <actions>
-    <action id="MyActionId" class="com.newpageaction.MyAction" text="Create New Morea Module" description="Create a new Morea Module with a specified name">
+    <action id="module" class="com.newpageaction.Module" text="Create New Morea Module" description="Create a new Morea Module with a specified name">
       <add-to-group group-id="ProjectViewPopupMenu" anchor="last"/>
     </action>
   </actions>
