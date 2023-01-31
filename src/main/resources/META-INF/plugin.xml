@@ -14,9 +14,8 @@
         <projectService serviceImplementation="com.github.bkimcode.newpageaction.services.MyProjectService"/>
     </extensions>
 
-
   <actions>
-    <action id="MyActionId" class="com.newpageaction.MyAction" text="Create New Morea Module" description="Create a new Morea Module with a specified name">
+    <action id="module" class="com.newpageaction.Module" text="Create New Morea Module" description="Create a new Morea Module with a specified name">
       <add-to-group group-id="ProjectViewPopupMenu" anchor="last"/>
     </action>
   </actions>
