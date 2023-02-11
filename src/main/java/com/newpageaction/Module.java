@@ -29,7 +29,10 @@ public class Module extends AnAction {
         if (input != null) {
             // Do something with the input, for example, create a new file with the specified name
             // in the current project directory
+
           File file= new File(input +".md");
+          System.out.println(input + ".md");
+          System.out.println("Executing from: "+ System.getProperty("user.dir"));
           FileWriter fw;
           try{
           if (file.exists())
@@ -38,10 +41,10 @@ public class Module extends AnAction {
           }
           else
           {
-            file.createNewFile();
+            boolean wasFileCreated = file.createNewFile();
             fw = new FileWriter(file);
             fw.append("XXX");
-            System.out.println("XXX Appended");
+            System.out.println("File Creation: " + wasFileCreated);
           }
 
           } catch (IOException ex) {
