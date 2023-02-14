@@ -1,9 +1,17 @@
 package com.newpageaction;
 
+
+import com.intellij.ide.DataManager;
+
+import com.intellij.ide.projectView.ProjectView;
 import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;
+import com.intellij.openapi.actionSystem.DataConstants;
+import com.intellij.openapi.project.Project;
 import com.intellij.openapi.ui.InputValidator;
 import com.intellij.openapi.ui.Messages;
+import com.intellij.openapi.vfs.VirtualFile;
+import com.intellij.openapi.actionSystem.CommonDataKeys;
 
 import java.io.File;
 import java.io.FileWriter;
@@ -29,29 +37,8 @@ public class Module extends AnAction {
         if (input != null) {
             // Do something with the input, for example, create a new file with the specified name
             // in the current project directory
-
-          File file= new File(input +".md");
-          System.out.println(input + ".md");
-          System.out.println("Executing from: "+ System.getProperty("user.dir"));
-          FileWriter fw;
-          try{
-          if (file.exists())
-          {
-            Messages.showErrorDialog("Another Module with the same name exists, please rename your module","Error");
-          }
-          else
-          {
-            boolean wasFileCreated = file.createNewFile();
-            fw = new FileWriter(file);
-            fw.append("XXX");
-            System.out.println("File Creation: " + wasFileCreated);
-          }
-
-          } catch (IOException ex) {
-            System.out.println("File Writing Failed: [Error Code 1]");
-            throw new RuntimeException(ex);
-
-          }
+            VirtualFile folder = e.getData(CommonDataKeys.VIRTUAL_FILE);
+            System.out.println("File Path: " + folder);
         }
         else{
           System.out.println("Input is null");
