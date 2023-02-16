@@ -52,11 +52,52 @@ public class Module extends AnAction {
                     VirtualFile newFile = newDir.createChildData(this, "module" + "-" + input + ".md");
                     // Create the file so it matches
                     try (OutputStream outputStream = newFile.getOutputStream(this)) {
-                        String content = "---\ntitle: \"" + input + "\"\npublished: true\nmorea_coming_soon: false\nmorea_id: \nmorea_outcomes:\nmorea_readings:\nmorea_experiences:\nmorea_assessments:\nmorea_type: module\nmorea_icon_url:\nmorea_start_date:\nmorea_end_date:\nmorea_labels:\nmorea_sort_order:\n---\n\n## " + input + "\n\nThis is a sample content for the newly created .md file.";
+                        String content = "---\ntitle: \"" + input + "\"\npublished: true\nmorea_coming_soon: false\nmorea_id: "+ input+"-module \nmorea_outcomes:\nmorea_readings:\nmorea_experiences:\nmorea_assessments:\nmorea_type: module\nmorea_icon_url:\nmorea_start_date:\nmorea_end_date:\nmorea_labels:\nmorea_sort_order:\n---\n\n## " + input + "\n\nThis is a sample content for the newly created .md file.";
                         outputStream.write(content.getBytes());
                     } catch (IOException ex) {
                         ex.printStackTrace();
                     }
+
+                    //Create Reading.md Template
+                  newFile = newDir.createChildData(this, input + "-" +"Reading" + ".md");
+                  // Create the file so it matches
+                  try (OutputStream outputStream = newFile.getOutputStream(this)) {
+                    String content = "---\nmorea_id: "+ input+"-reading \ntitle: \"" + input + "\"\npublished: true\nmorea_summary: \nmorea_type: reading\nmorea_sort_order: 2\nmorea_labels:\n---\n\n## " + input + "\n\nThis is a sample content for the newly created .md file.";
+                    outputStream.write(content.getBytes());
+                  } catch (IOException ex) {
+                    ex.printStackTrace();
+                  }
+
+                  //Create Assessment.md Template
+                  newFile = newDir.createChildData(this, input + "-" +"Assessment" + ".md");
+                  // Create the file so it matches
+                  try (OutputStream outputStream = newFile.getOutputStream(this)) {
+                    String content = "---\nmorea_id: "+ input+"-assessment \ntitle: \"" + input + "\"\npublished: true\nmorea_summary: \nmorea_type: assessment\nmorea_sort_order: 2\nmorea_labels:\n---\n\n## " + input + "\n\nThis is a sample content for the newly created .md file.";
+                    outputStream.write(content.getBytes());
+                  } catch (IOException ex) {
+                    ex.printStackTrace();
+                  }
+
+                  //Create Outcome.md Template
+                  newFile = newDir.createChildData(this, input + "-" +"Outcome" + ".md");
+                  // Create the file so it matches
+                  try (OutputStream outputStream = newFile.getOutputStream(this)) {
+                    String content = "---\nmorea_id: "+ input+"-outcome \ntitle: \"" + input + "\"\npublished: true\nmorea_summary: \nmorea_type: outcome\nmorea_sort_order: 2\nmorea_labels:\n---\n\n## " + input + "\n\nThis is a sample content for the newly created .md file.";
+                    outputStream.write(content.getBytes());
+                  } catch (IOException ex) {
+                    ex.printStackTrace();
+                  }
+
+                  //Create Experience.md Template
+                  newFile = newDir.createChildData(this, input + "-" +"Experience" + ".md");
+                  // Create the file so it matches
+                  try (OutputStream outputStream = newFile.getOutputStream(this)) {
+                    String content = "---\nmorea_id: "+ input+"-experience \ntitle: \"" + input + "\"\npublished: true\nmorea_summary: \nmorea_type: experience\nmorea_sort_order: 2\nmorea_labels:\n---\n\n## " + input + "\n\nThis is a sample content for the newly created .md file.";
+                    outputStream.write(content.getBytes());
+                  } catch (IOException ex) {
+                    ex.printStackTrace();
+                  }
+
                 } catch (IOException ex) {
                     throw new RuntimeException(ex);
                 }
@@ -67,3 +108,6 @@ public class Module extends AnAction {
         }
     }
 }
+
+
+
