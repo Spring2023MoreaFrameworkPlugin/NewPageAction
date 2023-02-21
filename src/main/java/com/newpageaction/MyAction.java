@@ -11,6 +11,7 @@ import com.intellij.openapi.ui.Messages;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.wm.WindowManager;
 import org.jetbrains.annotations.Nullable;
+import com.intellij.openapi.actionSystem.CommonDataKeys;
 
 import javax.swing.*;
 import java.io.IOException;
@@ -99,6 +100,18 @@ public class MyAction extends AnAction {
                     }
                 });
             }
+        }
+    }
+
+    @Override
+    public void update(AnActionEvent e){
+        super.update(e);
+        VirtualFile selectedFile = e.getData(PlatformDataKeys.VIRTUAL_FILE);
+        if (selectedFile != null) {
+            VirtualFile parent = selectedFile.getParent();
+            e.getPresentation().setEnabledAndVisible(parent != null && "morea".equals(parent.getName()));
+        } else {
+            e.getPresentation().setEnabledAndVisible(false);
         }
     }
 }

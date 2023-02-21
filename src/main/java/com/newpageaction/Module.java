@@ -4,15 +4,12 @@ package com.newpageaction;
 import com.intellij.ide.DataManager;
 
 import com.intellij.ide.projectView.ProjectView;
-import com.intellij.openapi.actionSystem.AnAction;
-import com.intellij.openapi.actionSystem.AnActionEvent;
-import com.intellij.openapi.actionSystem.DataConstants;
+import com.intellij.openapi.actionSystem.*;
 import com.intellij.openapi.application.WriteAction;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.ui.InputValidator;
 import com.intellij.openapi.ui.Messages;
 import com.intellij.openapi.vfs.VirtualFile;
-import com.intellij.openapi.actionSystem.CommonDataKeys;
 
 import java.io.File;
 import java.io.FileWriter;
@@ -20,9 +17,6 @@ import java.io.IOException;
 import java.io.OutputStream;
 
 public class Module extends AnAction {
-
-
-
   @Override
     public void actionPerformed(AnActionEvent e) {
         String input = Messages.showInputDialog("Enter Morea Module Name:", "New Morea Module", Messages.getQuestionIcon(), "ExampleModule", new InputValidator() {
@@ -105,6 +99,17 @@ public class Module extends AnAction {
         }
         else{
           System.out.println("Input is null");
+        }
+    }
+
+    @Override
+    public void update(AnActionEvent e) {
+        super.update(e);
+        VirtualFile selectedFile = e.getData(PlatformDataKeys.VIRTUAL_FILE);
+        if (selectedFile != null) {
+            e.getPresentation().setEnabledAndVisible("morea".equals(selectedFile.getName()));
+        } else {
+            e.getPresentation().setEnabledAndVisible(false);
         }
     }
 }
