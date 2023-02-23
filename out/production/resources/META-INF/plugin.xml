@@ -2,10 +2,10 @@
 <idea-plugin>
     <id>com.github.bkimcode.newpageaction</id>
     <name>NewPageAction</name>
-    <version>1.0</version>
+    <version>0.0.1</version>
     <vendor email="support@example.com" url="http://example.com">bkimcode</vendor>
     <description><![CDATA[
-    Description of the plugin.
+    A plugin to help with development of Morea.
   ]]></description>
     <depends>com.intellij.modules.platform</depends>
     <depends>com.intellij.modules.java-capable</depends>
