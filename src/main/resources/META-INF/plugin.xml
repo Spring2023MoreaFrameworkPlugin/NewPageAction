@@ -2,10 +2,12 @@
 <idea-plugin>
     <id>com.github.bkimcode.newpageaction</id>
     <name>NewPageAction</name>
-    <version>0.0.1</version>
-    <vendor email="support@example.com" url="http://example.com">bkimcode</vendor>
+    <version>0.0.2</version>
+    <vendor email="bekim3@hawaii.edu" url="https://github.com/Spring2023MoreaFrameworkPlugin/NewPageAction">bkimcode</vendor>
     <description><![CDATA[
-    A plugin to help with development of Morea.
+    Plugin to provide Morea developers with additional tools to aid in development.
+     - right-click option on Morea directory to create a new module
+     - right-click option on Morea module directory to create a new morea page
   ]]></description>
     <depends>com.intellij.modules.platform</depends>
     <depends>com.intellij.modules.java-capable</depends>
