@@ -2,7 +2,7 @@
 <idea-plugin>
     <id>com.github.bkimcode.newpageaction</id>
     <name>NewPageAction</name>
-    <version>0.0.2</version>
+    <version>0.0.1</version>
     <vendor email="bekim3@hawaii.edu" url="https://github.com/Spring2023MoreaFrameworkPlugin/NewPageAction">bkimcode</vendor>
     <description><![CDATA[
     Plugin to provide Morea developers with additional tools to aid in development.

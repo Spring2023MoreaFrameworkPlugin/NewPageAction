@@ -1,5 +1,6 @@
 import org.jetbrains.changelog.Changelog
 import org.jetbrains.changelog.markdownToHTML
+import org.gradle.api.tasks.Copy
 
 fun properties(key: String) = project.findProperty(key).toString()
 
@@ -20,6 +21,7 @@ plugins {
 
 group = properties("pluginGroup")
 version = properties("pluginVersion")
+
 
 // Configure project's dependencies
 repositories {
@@ -44,6 +46,13 @@ intellij {
     plugins.set(properties("platformPlugins").split(',').map(String::trim).filter(String::isNotEmpty))
 }
 
+// exclude duplicate files
+tasks.withType<Jar> {
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+    from("src/main/resources") {
+        include("META-INF/plugin.xml")
+    }
+}
 // Configure Gradle Changelog Plugin - read more: https://github.com/JetBrains/gradle-changelog-plugin
 changelog {
     groups.set(emptyList())
