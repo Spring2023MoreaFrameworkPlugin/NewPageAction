@@ -1,22 +1,15 @@
 package com.newpageaction;
 
-
-import com.intellij.ide.DataManager;
-
-import com.intellij.ide.projectView.ProjectView;
 import com.intellij.openapi.actionSystem.*;
 import com.intellij.openapi.application.WriteAction;
-import com.intellij.openapi.project.Project;
 import com.intellij.openapi.ui.InputValidator;
 import com.intellij.openapi.ui.Messages;
 import com.intellij.openapi.vfs.VirtualFile;
 
-import java.io.File;
-import java.io.FileWriter;
 import java.io.IOException;
 import java.io.OutputStream;
 
-public class Module extends AnAction {
+public class NewModuleAction extends AnAction {
   @Override
     public void actionPerformed(AnActionEvent e) {
         String input = Messages.showInputDialog("Enter Morea Module Name:", "New Morea Module", Messages.getQuestionIcon(), "ExampleModule", new InputValidator() {

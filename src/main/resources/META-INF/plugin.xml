@@ -22,7 +22,12 @@
         />
     </extensions>
   <actions>
-    <action id="module" class="com.newpageaction.Module" text="Create New Morea Module" description="Create a new Morea Module with a specified name" icon="AllIcons.Actions.GeneratedFolder">
+    <action
+        id="NewModuleAction"
+        class="com.newpageaction.NewModuleAction"
+        text="Create New Morea Module"
+        description="Create a new Morea Module with a specified name"
+        icon="AllIcons.Actions.GeneratedFolder">
       <add-to-group group-id="ProjectViewPopupMenu" anchor="first"/>
     </action>
   <action
