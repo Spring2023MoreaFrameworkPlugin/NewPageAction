@@ -11,13 +11,12 @@ import com.intellij.openapi.ui.Messages;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.wm.WindowManager;
 import org.jetbrains.annotations.Nullable;
-import com.intellij.openapi.actionSystem.CommonDataKeys;
 
 import javax.swing.*;
 import java.io.IOException;
 import java.io.OutputStream;
 
-public class MyAction extends AnAction {
+public class NewPageAction extends AnAction {
     @Override
     public void actionPerformed(AnActionEvent e) {
         // options a user can choose
