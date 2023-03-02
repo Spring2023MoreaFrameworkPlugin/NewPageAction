@@ -12,8 +12,14 @@
     <depends>com.intellij.modules.platform</depends>
     <depends>com.intellij.modules.java-capable</depends>
     <extensions defaultExtensionNs="com.intellij">
-        <applicationService serviceImplementation="com.github.bkimcode.newpageaction.services.MyApplicationService"/>
+        <applicationService serviceImplementation="com.newpageaction.settings.AppSettingsState"/>
         <projectService serviceImplementation="com.github.bkimcode.newpageaction.services.MyProjectService"/>
+        <applicationConfigurable
+          parentId="tools"
+          instance="com.newpageaction.settings.AppSettingsConfigurable"
+          id="com.newpageaction.settings.AppSettingsConfigurable"
+          displayName="MOREA settings"
+        />
     </extensions>
   <actions>
     <action id="module" class="com.newpageaction.Module" text="Create New Morea Module" description="Create a new Morea Module with a specified name" icon="AllIcons.Actions.GeneratedFolder">
