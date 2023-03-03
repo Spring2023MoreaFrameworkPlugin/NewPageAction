@@ -13,10 +13,30 @@ import com.intellij.openapi.wm.WindowManager;
 import org.jetbrains.annotations.Nullable;
 
 import javax.swing.*;
+import java.io.File;
 import java.io.IOException;
 import java.io.OutputStream;
 
 public class NewPageAction extends AnAction {
+    private static boolean fileExistsInDirectoryOrSubdirectories(File directory, String fileName) {
+        if (directory.isDirectory()) {
+            File[] files = directory.listFiles();
+            if (files != null) {
+                for (File file : files) {
+                    if (file.isDirectory()) {
+                        // recursively check in subdirectories
+                        if (fileExistsInDirectoryOrSubdirectories(file, fileName)) {
+                            return true;
+                        }
+                    } else if (file.getName().equals(fileName)) {
+                        return true;
+                    }
+                }
+            }
+        }
+        return false;
+    }
+
     @Override
     public void actionPerformed(AnActionEvent e) {
         // options a user can choose
@@ -71,6 +91,14 @@ public class NewPageAction extends AnAction {
 
                 // Get the directory where the action is performed
                 VirtualFile directory = selectedFile.isDirectory() ? selectedFile : selectedFile.getParent();
+                // Construct the file name
+                String fileName = input1 + "-" + input2 + ".md";
+                // Check if the file already exists in the parent directory or any subdirectories
+                if (fileExistsInDirectoryOrSubdirectories(new File(directory.getParent().getPath()), fileName)) {
+                    Messages.showMessageDialog("File already exists.", "Error", Messages.getErrorIcon());
+                    return;
+                }
+
                 // this is needed or else you can't perform actions on the plugin test
                 WriteAction.run(() -> {
                     try {
