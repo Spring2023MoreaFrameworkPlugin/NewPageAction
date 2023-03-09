@@ -31,10 +31,10 @@ public class NewModuleAction extends AnAction {
         boolean experiences = settings.experienceStatus;
         boolean readings = settings.readingStatus;
 
-        String outcomeString = "\n  -"+ input+"-Outcome";
-        String assessmentString = "\n  -"+ input +"-Assessment";
-        String experienceString = "\n  -"+ input +"-Experience";
-        String readingString = "\n  -"+ input +"-Reading";
+        String outcomeString = "\n  -"+ input+"-outcome";
+        String assessmentString = "\n  -"+ input +"-assessment";
+        String experienceString = "\n  -"+ input +"-experience";
+        String readingString = "\n  -"+ input +"-reading";
 
         if(outcomes == false){
           outcomeString = "";
