@@ -43,18 +43,19 @@ public class AppSettingsConfigurable implements Configurable {
     public void apply() {
         AppSettingsState settings = AppSettingsState.getInstance();
         settings.outcomeStatus = mySettingsComponent.getOutcomeStates();
-        settings.readingStatus = mySettingsComponent.getOutcomeStates();
-        settings.experienceStatus = mySettingsComponent.getOutcomeStates();
-        settings.assessmentStatus = mySettingsComponent.getOutcomeStates();
+        settings.readingStatus = mySettingsComponent.getReadingStatus();
+        settings.experienceStatus = mySettingsComponent.getExperienceStatus();
+        settings.assessmentStatus = mySettingsComponent.getAssessmentStatus();
+
     }
 
     @Override
     public void reset() {
         AppSettingsState settings = AppSettingsState.getInstance();
         mySettingsComponent.setMyOutcomeStatus(settings.outcomeStatus);
-        mySettingsComponent.setMyReadingStatus(settings.outcomeStatus);
-        mySettingsComponent.setMyExperienceStatus(settings.outcomeStatus);
-        mySettingsComponent.setMyAssessmentStatus(settings.outcomeStatus);
+        mySettingsComponent.setMyReadingStatus(settings.readingStatus);
+        mySettingsComponent.setMyExperienceStatus(settings.experienceStatus);
+        mySettingsComponent.setMyAssessmentStatus(settings.assessmentStatus);
     }
 
     @Override
