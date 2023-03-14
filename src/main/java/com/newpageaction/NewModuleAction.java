@@ -31,10 +31,10 @@ public class NewModuleAction extends AnAction {
         boolean experiences = settings.experienceStatus;
         boolean readings = settings.readingStatus;
 
-        String outcomeString = "\n  -"+ input+"-outcome";
-        String assessmentString = "\n  -"+ input +"-assessment";
-        String experienceString = "\n  -"+ input +"-experience";
-        String readingString = "\n  -"+ input +"-reading";
+        String outcomeString = "\n  -"+ " " + input+"-outcome";
+        String assessmentString = "\n  -"+ " " + input +"-assessment";
+        String experienceString = "\n  -"+ " " + input +"-experience";
+        String readingString = "\n  -"+ " " + input +"-reading";
 
         if(outcomes == false){
           outcomeString = "";
@@ -70,7 +70,7 @@ public class NewModuleAction extends AnAction {
 
                     if(readings == true) {
                       //Create Reading.md Template
-                      newFile = newDir.createChildData(this, input + "-" + "Reading" + ".md");
+                      newFile = newDir.createChildData(this, "reading" + "-" + input + ".md");
                       // Create the file so it matches
                       try (OutputStream outputStream = newFile.getOutputStream(this)) {
                         String content = "---\nmorea_id: " + input + "-reading \ntitle: \"" + input + "\"\npublished: true\nmorea_summary: \nmorea_type: reading\nmorea_sort_order: 2\nmorea_labels:\n---\n\n## " + input + "\n\nThis is a sample content for the newly created .md file.";
@@ -82,7 +82,7 @@ public class NewModuleAction extends AnAction {
 
                     if(assessments == true) {
                       //Create Assessment.md Template
-                      newFile = newDir.createChildData(this, input + "-" + "Assessment" + ".md");
+                      newFile = newDir.createChildData(this, "assessment" + "-" + input + ".md");
                       // Create the file so it matches
                       try (OutputStream outputStream = newFile.getOutputStream(this)) {
                         String content = "---\nmorea_id: " + input + "-assessment \ntitle: \"" + input + "\"\npublished: true\nmorea_summary: \nmorea_type: assessment\nmorea_sort_order: 2\nmorea_labels:\n---\n\n## " + input + "\n\nThis is a sample content for the newly created .md file.";
@@ -94,7 +94,7 @@ public class NewModuleAction extends AnAction {
 
                     if(outcomes == true) {
                       //Create Outcome.md Template
-                      newFile = newDir.createChildData(this, input + "-" + "Outcome" + ".md");
+                      newFile = newDir.createChildData(this, "outcome" + "-" + input + ".md");
                       // Create the file so it matches
                       try (OutputStream outputStream = newFile.getOutputStream(this)) {
                         String content = "---\nmorea_id: " + input + "-outcome \ntitle: \"" + input + "\"\npublished: true\nmorea_summary: \nmorea_type: outcome\nmorea_sort_order: 2\nmorea_labels:\n---\n\n## " + input + "\n\nThis is a sample content for the newly created .md file.";
@@ -106,7 +106,7 @@ public class NewModuleAction extends AnAction {
 
                     if(experiences == true) {
                       //Create Experience.md Template
-                      newFile = newDir.createChildData(this, input + "-" + "Experience" + ".md");
+                      newFile = newDir.createChildData(this, "experience" + "-" + input + ".md");
                       // Create the file so it matches
                       try (OutputStream outputStream = newFile.getOutputStream(this)) {
                         String content = "---\nmorea_id: " + input + "-experience \ntitle: \"" + input + "\"\npublished: true\nmorea_summary: \nmorea_type: experience\nmorea_sort_order: 2\nmorea_labels:\n---\n\n## " + input + "\n\nThis is a sample content for the newly created .md file.";
