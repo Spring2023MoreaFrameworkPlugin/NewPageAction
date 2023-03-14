@@ -62,7 +62,8 @@ public class NewModuleAction extends AnAction {
                     VirtualFile newFile = newDir.createChildData(this, "module" + "-" + input + ".md");
                     // Create the file so it matches
                     try (OutputStream outputStream = newFile.getOutputStream(this)) {
-                        String content = "---\ntitle: \"" + input + "\"\npublished: true\nmorea_coming_soon: false\nmorea_id: "+ input+"-module \nmorea_outcomes:"+ finalOutcomeString +"\nmorea_readings:"+ finalReadingString +"\nmorea_experiences:"+ finalExperienceString +"\nmorea_assessments:"+ finalAssessmentString +"\nmorea_type: module\nmorea_icon_url:\nmorea_start_date:\nmorea_end_date:\nmorea_labels:\nmorea_sort_order:\n---\n\n## " + input + "\n\nThis is a sample content for the newly created .md file.";
+                        String content = "---\ntitle: \"" + input + "\"\npublished: true\nmorea_coming_soon: false\nmorea_id: " +
+                                ""+ input+"-module \nmorea_outcomes:"+ finalOutcomeString +"\nmorea_readings:"+ finalReadingString +"\nmorea_experiences:"+ finalExperienceString +"\nmorea_assessments:"+ finalAssessmentString +"\nmorea_type: module\nmorea_icon_url:\nmorea_start_date:\nmorea_end_date:\nmorea_labels:\nmorea_sort_order:\n---\n\n## " + input + "\n\nThis is a sample content for the newly created .md file.";
                         outputStream.write(content.getBytes());
                     } catch (IOException ex) {
                         ex.printStackTrace();
@@ -73,7 +74,7 @@ public class NewModuleAction extends AnAction {
                       newFile = newDir.createChildData(this, "reading" + "-" + input + ".md");
                       // Create the file so it matches
                       try (OutputStream outputStream = newFile.getOutputStream(this)) {
-                        String content = "---\nmorea_id: " + input + "-reading \ntitle: \"" + input + "\"\npublished: true\nmorea_summary: \nmorea_type: reading\nmorea_sort_order: 2\nmorea_labels:\n---\n\n## " + input + "\n\nThis is a sample content for the newly created .md file.";
+                        String content = "---\nmorea_id: " + input + "-reading \ntitle: \"" + input + "\"\npublished: true\nmorea_summary: sample morea summary text \nmorea_type: reading\nmorea_sort_order: 2\nmorea_labels:\n---\n\n## " + input + "\n\nThis is a sample content for the newly created .md file.";
                         outputStream.write(content.getBytes());
                       } catch (IOException ex) {
                         ex.printStackTrace();
@@ -85,7 +86,7 @@ public class NewModuleAction extends AnAction {
                       newFile = newDir.createChildData(this, "assessment" + "-" + input + ".md");
                       // Create the file so it matches
                       try (OutputStream outputStream = newFile.getOutputStream(this)) {
-                        String content = "---\nmorea_id: " + input + "-assessment \ntitle: \"" + input + "\"\npublished: true\nmorea_summary: \nmorea_type: assessment\nmorea_sort_order: 2\nmorea_labels:\n---\n\n## " + input + "\n\nThis is a sample content for the newly created .md file.";
+                        String content = "---\nmorea_id: " + input + "-assessment \ntitle: \"" + input + "\"\npublished: true\nmorea_summary: sample morea summary text \nmorea_type: assessment\nmorea_sort_order: 2\nmorea_labels:\n---\n\n## " + input + "\n\nThis is a sample content for the newly created .md file.";
                         outputStream.write(content.getBytes());
                       } catch (IOException ex) {
                         ex.printStackTrace();
@@ -97,7 +98,7 @@ public class NewModuleAction extends AnAction {
                       newFile = newDir.createChildData(this, "outcome" + "-" + input + ".md");
                       // Create the file so it matches
                       try (OutputStream outputStream = newFile.getOutputStream(this)) {
-                        String content = "---\nmorea_id: " + input + "-outcome \ntitle: \"" + input + "\"\npublished: true\nmorea_summary: \nmorea_type: outcome\nmorea_sort_order: 2\nmorea_labels:\n---\n\n## " + input + "\n\nThis is a sample content for the newly created .md file.";
+                        String content = "---\nmorea_id: " + input + "-outcome \ntitle: \"" + input + "\"\npublished: true\nmorea_summary: sample morea summary text \nmorea_type: outcome\nmorea_sort_order: 2\nmorea_labels:\n---\n\n## " + input + "\n\nThis is a sample content for the newly created .md file.";
                         outputStream.write(content.getBytes());
                       } catch (IOException ex) {
                         ex.printStackTrace();
@@ -109,7 +110,7 @@ public class NewModuleAction extends AnAction {
                       newFile = newDir.createChildData(this, "experience" + "-" + input + ".md");
                       // Create the file so it matches
                       try (OutputStream outputStream = newFile.getOutputStream(this)) {
-                        String content = "---\nmorea_id: " + input + "-experience \ntitle: \"" + input + "\"\npublished: true\nmorea_summary: \nmorea_type: experience\nmorea_sort_order: 2\nmorea_labels:\n---\n\n## " + input + "\n\nThis is a sample content for the newly created .md file.";
+                        String content = "---\nmorea_id: " + input + "-experience \ntitle: \"" + input + "\"\npublished: true\nmorea_summary: sample morea summary text \nmorea_type: experience\nmorea_sort_order: 2\nmorea_labels:\n---\n\n## " + input + "\n\nThis is a sample content for the newly created .md file.";
                         outputStream.write(content.getBytes());
                       } catch (IOException ex) {
                         ex.printStackTrace();
