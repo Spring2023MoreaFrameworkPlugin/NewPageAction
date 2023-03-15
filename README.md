@@ -1,8 +1,8 @@
 # Morea
 
 ![Build](https://github.com/Spring2023MoreaFrameworkPlugin/NewPageAction/workflows/Build/badge.svg)
-[![Version](https://img.shields.io/jetbrains/plugin/v/PLUGIN_ID.svg)](https://plugins.jetbrains.com/plugin/PLUGIN_ID)
-[![Downloads](https://img.shields.io/jetbrains/plugin/d/PLUGIN_ID.svg)](https://plugins.jetbrains.com/plugin/PLUGIN_ID)
+[![Version](https://img.shields.io/jetbrains/plugin/v/21128-morea.svg)](https://plugins.jetbrains.com/plugin/21128-morea)
+[![Downloads](https://img.shields.io/jetbrains/plugin/d/21128-morea.svg)](https://plugins.jetbrains.com/plugin/21128-morea)
 
 ## Template ToDo list
 - [ ] Create a new [IntelliJ Platform Plugin Template][template] project.
