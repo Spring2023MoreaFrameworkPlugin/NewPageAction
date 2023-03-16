@@ -111,7 +111,7 @@ public class NewPageAction extends AnAction {
                                     "published: true\n" +
                                     "morea_id: " + input1 + "-" + input2 + "\n" +
                                     "morea_type: " + input1 + "\n" +
-                                    "morea_summary: \n" +
+                                    "morea_summary: example summary\n" +
                                     "morea_sort_order: \n" +
                                     "morea_start_date: \n" +
                                     "morea_labels: \n" +
