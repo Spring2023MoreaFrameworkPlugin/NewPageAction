@@ -38,6 +38,14 @@
       icon="AllIcons.Actions.AddFile">
     <add-to-group group-id="ProjectViewPopupMenu" anchor="first" />
   </action>
+    <action
+        id="UpdateModule"
+        class="com.newpageaction.UpdateModule"
+        text="Update Module.md file"
+        description="Updates the module.md to contain current morea pages"
+        icon="AllIcons.Actions.AddFile">
+      <add-to-group group-id="ProjectViewPopupMenu" anchor="last" />
+    </action>
 </actions>
 
 </idea-plugin>
