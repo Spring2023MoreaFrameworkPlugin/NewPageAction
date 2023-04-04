@@ -30,6 +30,7 @@
                     icon="AllIcons.Actions.GeneratedFolder">
                 <add-to-group group-id="NewGroup" anchor="first" />
             </action>
+   <!--
             <action
                     id="NewPageAction"
                     class="com.newpageaction.NewPageAction"
@@ -38,6 +39,7 @@
                     icon="AllIcons.Actions.AddFile">
                 <add-to-group group-id="NewGroup" anchor="first" />
             </action>
+   -->
             <action
                     id="NewOutcomesAction"
                     class="com.newpageaction.NewOutcomesAction"
