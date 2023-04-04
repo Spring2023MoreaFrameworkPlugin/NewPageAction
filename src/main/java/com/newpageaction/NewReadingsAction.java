@@ -16,7 +16,7 @@ public class NewReadingsAction extends AnAction {
 
     @Override
     public void actionPerformed(AnActionEvent e) {
-        DuplicateFiles Dupe = new DuplicateFiles();
+        MoreaUtils morea = new MoreaUtils();
         String input = Messages.showInputDialog("Enter Readings Page Name:", "New Readings Page", Messages.getQuestionIcon(), "reading-example", new InputValidator() {
             @Override
             public boolean checkInput(String inputString) {
@@ -32,24 +32,8 @@ public class NewReadingsAction extends AnAction {
         // Check if name to create is not null
         if (input != null) {
             // Check input name matches MOREA naming convention
-            if (!input.contains("reading")) {
-                input = "reading-" + input;
-            }
-            VirtualFile selectedFile = e.getData(PlatformDataKeys.VIRTUAL_FILE);
-            // Check if the selected file is not null
-            if (selectedFile == null) {
-                return;
-            }
-
-            // Get the directory where the action is performed
-            VirtualFile directory = selectedFile.isDirectory() ? selectedFile : selectedFile.getParent();
-            // Construct the file name
-            String fileName = input + ".md";
-            // Check if file exists in parent directory or any subdirectories
-            if (Dupe.fileExistsInDirectoryOrSubdirectories(new File(directory.getParent().getPath()), fileName)) {
-                Messages.showMessageDialog("File already exists.", "Error", Messages.getErrorIcon());
-                return;
-            }
+            input = morea.toMoreaName(input, "reading");
+            VirtualFile directory = morea.checkDupes(e, input);
 
             String finalInput = input;
             WriteAction.run(() -> {
@@ -57,16 +41,16 @@ public class NewReadingsAction extends AnAction {
                     VirtualFile readingFile = directory.createChildData(this, finalInput + ".md");
                     try (OutputStream outputStream = readingFile.getOutputStream(this)) {
                         String content = "---\n" +
-                                "title: \"" + finalInput + "\"\n" +
+                                "title: \"CHANGE ME\"\n" +
                                 "published: true\n" +
                                 "morea_id: " + finalInput + "\n" +
                                 "morea_type: reading\n" +
-                                "morea_summary: example summary\n" +
+                                "morea_summary: \"CHANGE ME\"\n" +
                                 "morea_sort_order: \n" +
                                 "morea_start_date: \n" +
                                 "morea_labels: \n" +
                                 "---\n\n" +
-                                "## " + finalInput + "\n\n" +
+                                "## \"CHANGE ME\"\n\n" +
                                 "This is a sample content for the newly creating reading.md file";
                         outputStream.write(content.getBytes());
                     } catch (IOException ex) {
