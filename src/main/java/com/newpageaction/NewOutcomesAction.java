@@ -12,12 +12,12 @@ import java.io.File;
 import java.io.IOException;
 import java.io.OutputStream;
 
-public class NewReadingsAction extends AnAction {
+public class NewOutcomesAction extends AnAction {
 
     @Override
     public void actionPerformed(AnActionEvent e) {
         DuplicateFiles Dupe = new DuplicateFiles();
-        String input = Messages.showInputDialog("Enter Readings Page Name:", "New Readings Page", Messages.getQuestionIcon(), "reading-example", new InputValidator() {
+        String input = Messages.showInputDialog("Enter Outcomes Page Name:", "New Outcomes Page", Messages.getQuestionIcon(), "outcome-example", new InputValidator() {
             @Override
             public boolean checkInput(String inputString) {
                 return !inputString.isEmpty();
@@ -32,8 +32,8 @@ public class NewReadingsAction extends AnAction {
         // Check if name to create is not null
         if (input != null) {
             // Check input name matches MOREA naming convention
-            if (!input.contains("reading")) {
-                input = "reading-" + input;
+            if (!input.contains("outcome")) {
+                input = "outcome-" + input;
             }
             VirtualFile selectedFile = e.getData(PlatformDataKeys.VIRTUAL_FILE);
             // Check if the selected file is not null
@@ -60,14 +60,14 @@ public class NewReadingsAction extends AnAction {
                                 "title: \"" + finalInput + "\"\n" +
                                 "published: true\n" +
                                 "morea_id: " + finalInput + "\n" +
-                                "morea_type: reading\n" +
+                                "morea_type: outcome\n" +
                                 "morea_summary: example summary\n" +
                                 "morea_sort_order: \n" +
                                 "morea_start_date: \n" +
                                 "morea_labels: \n" +
                                 "---\n\n" +
                                 "## " + finalInput + "\n\n" +
-                                "This is a sample content for the newly creating reading.md file";
+                                "This is a sample content for the newly creating outcome.md file";
                         outputStream.write(content.getBytes());
                     } catch (IOException ex) {
                         ex.printStackTrace();
