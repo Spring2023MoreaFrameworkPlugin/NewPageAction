@@ -8,7 +8,6 @@ import com.intellij.openapi.ui.InputValidator;
 import com.intellij.openapi.ui.Messages;
 import com.intellij.openapi.vfs.VirtualFile;
 
-import java.io.File;
 import java.io.IOException;
 import java.io.OutputStream;
 
@@ -50,8 +49,7 @@ public class NewReadingsAction extends AnAction {
                                 "morea_start_date: \n" +
                                 "morea_labels: \n" +
                                 "---\n\n" +
-                                "## \"CHANGE ME\"\n\n" +
-                                "This is a sample content for the newly creating reading.md file";
+                                "## \"CHANGE ME\"\n\n" ;
                         outputStream.write(content.getBytes());
                     } catch (IOException ex) {
                         ex.printStackTrace();
