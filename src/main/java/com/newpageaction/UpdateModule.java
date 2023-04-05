@@ -36,7 +36,7 @@ public class UpdateModule extends AnAction {
                 files.add(file);
             }
         }
-        String mainMarkdownFileName = "module" + "-" + folder.getName() + ".md";
+        String mainMarkdownFileName ="module" + "-" + folder.getName() + ".md";
 
         // Create a map to store the updated sections
         Map<String, List<String>> updatedSections = new HashMap<>();
