@@ -13,7 +13,7 @@ import java.io.OutputStream;
 public class NewModuleAction extends AnAction {
   @Override
     public void actionPerformed(AnActionEvent e) {
-        String input = Messages.showInputDialog("Enter a directory name for the new Morea Module  :", "New Morea Module", Messages.getQuestionIcon(), "example-file-name", new InputValidator() {
+        String input = Messages.showInputDialog("Enter a name for the new Morea Module  :", "New Morea Module", Messages.getQuestionIcon(), "module-example", new InputValidator() {
             @Override
             public boolean checkInput(String input) {
                 return !input.isEmpty();
@@ -57,9 +57,20 @@ public class NewModuleAction extends AnAction {
           WriteAction.run(() -> {
                 try {
                     // create a directory with the specified name
-                    VirtualFile newDir = folder.createChildDirectory(this, input);
+                    VirtualFile newDir;
+                    if (input.startsWith("module-")) {
+                        String dirName = input.substring(7); // remove "module-" prefix
+                        newDir = folder.createChildDirectory(this, dirName);
+                    } else {
+                        newDir = folder.createChildDirectory(this, input);
+                    }
                     // create a .md file called module-input.md inside the new directory
-                    VirtualFile newFile = newDir.createChildData(this, "module-" + input + ".md");
+                    VirtualFile newFile;
+                    if (input.startsWith("module-")) {
+                        newFile = newDir.createChildData(this, input + ".md");
+                    } else {
+                        newFile = newDir.createChildData(this, "module-" + input + ".md");
+                    }
                     // Create the file so it matches
                     try (OutputStream outputStream = newFile.getOutputStream(this)) {
                         String content = "---" + "\n" +
